@@ -16,7 +16,7 @@ namespace Quản_lý_quán_bar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fLogin());
+            Application.Run(new fPubMaster());
         }
     }
 }

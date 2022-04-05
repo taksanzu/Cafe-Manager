@@ -37,7 +37,7 @@
             this.ibtnQLMA = new FontAwesome.Sharp.IconButton();
             this.pbxLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlDesktop = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -55,12 +55,11 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(226, 556);
+            this.panelMenu.Size = new System.Drawing.Size(226, 648);
             this.panelMenu.TabIndex = 0;
             // 
             // ibtnExit
             // 
-            this.ibtnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.ibtnExit.FlatAppearance.BorderSize = 0;
             this.ibtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
@@ -164,7 +163,7 @@
             // pbxLogo
             // 
             this.pbxLogo.Image = global::Quản_lý_quán_bar.Properties.Resources.Sài_Thành__1_;
-            this.pbxLogo.Location = new System.Drawing.Point(557, 0);
+            this.pbxLogo.Location = new System.Drawing.Point(735, 0);
             this.pbxLogo.Name = "pbxLogo";
             this.pbxLogo.Size = new System.Drawing.Size(57, 52);
             this.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -179,32 +178,31 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(226, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(607, 52);
+            this.panel2.Size = new System.Drawing.Size(795, 52);
             this.panel2.TabIndex = 1;
             // 
-            // panel3
+            // pnlDesktop
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(226, 52);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(607, 504);
-            this.panel3.TabIndex = 2;
+            this.pnlDesktop.BackColor = System.Drawing.Color.White;
+            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDesktop.Location = new System.Drawing.Point(226, 52);
+            this.pnlDesktop.Name = "pnlDesktop";
+            this.pnlDesktop.Size = new System.Drawing.Size(795, 596);
+            this.pnlDesktop.TabIndex = 2;
             // 
-            // fBarMaster
+            // fPubMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.ibtnExit;
-            this.ClientSize = new System.Drawing.Size(833, 556);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(1021, 648);
+            this.Controls.Add(this.pnlDesktop);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelMenu);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "fBarMaster";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Name = "fPubMaster";
             this.Text = "fBarMaster";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fPubMaster_KeyPress);
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -216,7 +214,7 @@
 
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlDesktop;
         private FontAwesome.Sharp.IconButton ibtnQLMA;
         private System.Windows.Forms.PictureBox pbxLogo;
         private FontAwesome.Sharp.IconButton ibtnXBC;

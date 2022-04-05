@@ -53,6 +53,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cfFoodControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cfFoodControl.Designer.cs">
+      <DependentUpon>cfFoodControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="fPubMaster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="cfFoodControl.resx">
+      <DependentUpon>cfFoodControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fPubMaster.resx">
       <DependentUpon>fPubMaster.cs</DependentUpon>
     </EmbeddedResource>

@@ -17,11 +17,8 @@ namespace Quản_lý_quán_bar
 
         private IconButton currentBtn;
         private Panel leftBorderBtn;
-        private struct RBGColor
-        {
-            public static Color color1 = Color.FromArgb(249, 65, 68);
-            
-        }
+        private Form currentChildForm;
+        
         public fPubMaster()
         {
             InitializeComponent();
@@ -33,6 +30,11 @@ namespace Quản_lý_quán_bar
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+        }
+        private struct RBGColor
+        {
+            public static Color color1 = Color.FromArgb(249, 65, 68);
+
         }
         private void ActiveBtn(object senderBtn, Color color)
         {
@@ -66,10 +68,28 @@ namespace Quản_lý_quán_bar
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
+        private void OpenChildForm(Form childForm)
+        {
+            //open only form
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlDesktop.Controls.Add(childForm);
+            pnlDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
 
+        }
         private void ibtnQLMA_Click(object sender, EventArgs e)
         {
             ActiveBtn(sender, RBGColor.color1);
+            OpenChildForm(new cfFoodControl());
         }
 
         private void ibtnQLNV_Click(object sender, EventArgs e)
@@ -112,7 +132,24 @@ namespace Quản_lý_quán_bar
         }
         private void pbxLogo_Click(object sender, EventArgs e)
         {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
             Reset();
+        }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void pnChildForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        private void fPubMaster_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }
