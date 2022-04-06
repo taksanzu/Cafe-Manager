@@ -23,7 +23,7 @@ namespace Quản_lý_quán_bar
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 60);
+            leftBorderBtn.Size = new Size(7, 48);
             panelMenu.Controls.Add(leftBorderBtn);
             //form
             this.Text = String.Empty;
