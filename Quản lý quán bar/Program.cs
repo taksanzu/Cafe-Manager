@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Quản_lý_quán_bar
 {
     internal static class Program
@@ -16,7 +17,7 @@ namespace Quản_lý_quán_bar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fPubMaster());
+            Application.Run(new fLogin());
         }
     }
 }

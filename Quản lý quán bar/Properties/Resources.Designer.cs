@@ -73,6 +73,16 @@ namespace Quản_lý_quán_bar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pub_TAKSANSY {
+            get {
+                object obj = ResourceManager.GetObject("Pub TAKSANSY", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sài_Thành__1_ {
             get {
                 object obj = ResourceManager.GetObject("Sài Thành (1)", resourceCulture);

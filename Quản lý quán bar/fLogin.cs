@@ -135,5 +135,10 @@ namespace Quản_lý_quán_bar
         {
             
         }
+
+        private void ibtnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

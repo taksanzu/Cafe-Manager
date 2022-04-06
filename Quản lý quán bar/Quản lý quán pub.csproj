@@ -118,5 +118,8 @@
   <ItemGroup>
     <None Include="Resources\Sài Thành %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pub TAKSANSY.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

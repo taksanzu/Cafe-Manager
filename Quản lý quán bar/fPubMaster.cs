@@ -33,7 +33,7 @@ namespace Quản_lý_quán_bar
         }
         private struct RBGColor
         {
-            public static Color color1 = Color.FromArgb(249, 65, 68);
+            public static Color color1 = Color.FromArgb(6, 214, 160);
 
         }
         private void ActiveBtn(object senderBtn, Color color)
@@ -42,7 +42,7 @@ namespace Quản_lý_quán_bar
             {
                 DisableBtn();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(52, 58, 64);
+                currentBtn.BackColor = Color.FromArgb(255,107,107);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -60,7 +60,7 @@ namespace Quản_lý_quán_bar
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(52, 58, 60);
+                currentBtn.BackColor = Color.FromArgb(255,107,110);
                 currentBtn.ForeColor = Color.FromArgb(248, 249, 250);
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.FromArgb(248, 249, 250);
