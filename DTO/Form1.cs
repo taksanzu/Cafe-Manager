@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FontAwesome.Sharp;
 
-namespace Quản_lý_quán_bar
+namespace DTO
 {
-    public partial class cfFoodControl : Form
+    public partial class Form1 : Form
     {
-        public cfFoodControl()
+        public Form1()
         {
             InitializeComponent();
         }

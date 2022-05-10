@@ -9,21 +9,38 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
+using DTO;
+using Quản_lý_quán_bar.fAdminCF;
+using Quản_lý_quán_bar.fMain;
 
 namespace Quản_lý_quán_bar
 {
-    public partial class fPubMaster : Form
+    public partial class fCafeMaster : Form
     {
 
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        
-        public fPubMaster()
+
+        private DTO_TaiKhoan loginAccount;
+
+        public DTO_TaiKhoan LoginAccount
+        {
+            get { return loginAccount; }
+            set { loginAccount = value; ChangeAccount(loginAccount.Type); }
+        }
+        void ChangeAccount(int type)
+        {
+            ibtnAdmin.Visible = type == 0;
+            ibtnXemBaoCao.Visible = type == 2;
+            lbName.Text += " (" + LoginAccount.DisplayName + ")";
+        }
+        public fCafeMaster(DTO_TaiKhoan acc)
         {
             InitializeComponent();
+            this.LoginAccount = acc;
             leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 48);
+            leftBorderBtn.Size = new Size(7, 53);
             panelMenu.Controls.Add(leftBorderBtn);
             //form
             this.Text = String.Empty;
@@ -33,7 +50,7 @@ namespace Quản_lý_quán_bar
         }
         private struct RBGColor
         {
-            public static Color color1 = Color.FromArgb(6, 214, 160);
+            public static Color color1 = Color.FromArgb(229, 56, 59);
 
         }
         private void ActiveBtn(object senderBtn, Color color)
@@ -42,7 +59,7 @@ namespace Quản_lý_quán_bar
             {
                 DisableBtn();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(255,107,107);
+                currentBtn.BackColor = Color.FromArgb(0, 180, 216);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -60,10 +77,10 @@ namespace Quản_lý_quán_bar
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(255,107,110);
-                currentBtn.ForeColor = Color.FromArgb(248, 249, 250);
+                currentBtn.BackColor = Color.FromArgb(0, 180, 216);
+                currentBtn.ForeColor = Color.White;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
-                currentBtn.IconColor = Color.FromArgb(248, 249, 250);
+                currentBtn.IconColor = Color.White;
                 currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
@@ -80,36 +97,11 @@ namespace Quản_lý_quán_bar
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            pnlDesktop.Controls.Add(childForm);
-            pnlDesktop.Tag = childForm;
+            pnlChildForm.Controls.Add(childForm);
+            pnlChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
 
-        }
-        private void ibtnQLMA_Click(object sender, EventArgs e)
-        {
-            ActiveBtn(sender, RBGColor.color1);
-            OpenChildForm(new cfFoodControl());
-        }
-
-        private void ibtnQLNV_Click(object sender, EventArgs e)
-        {
-            ActiveBtn(sender, RBGColor.color1);
-        }
-
-        private void ibtnQLLL_Click(object sender, EventArgs e)
-        {
-            ActiveBtn(sender, RBGColor.color1);
-        }
-
-        private void ibtnQLTK_Click(object sender, EventArgs e)
-        {
-            ActiveBtn(sender, RBGColor.color1);
-        }
-
-        private void ibtnXBC_Click(object sender, EventArgs e)
-        {
-            ActiveBtn(sender, RBGColor.color1);
         }
 
         private void ibtnExit_Click(object sender, EventArgs e)
@@ -126,7 +118,6 @@ namespace Quản_lý_quán_bar
 
         private void Reset()
         {
-
             DisableBtn();
             leftBorderBtn.Visible = false;
         }
@@ -142,14 +133,53 @@ namespace Quản_lý_quán_bar
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void pnChildForm_MouseDown(object sender, MouseEventArgs e)
+        
+        private void fPubMaster_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            lbTime.Text = DateTime.Now.ToShortTimeString();
+        }
+
+        private void ibtnMaximize_Click(object sender, EventArgs e)
+        {
+             if(this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        
+        }
+
+        private void pnlCafeMN_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        private void fPubMaster_KeyPress(object sender, KeyPressEventArgs e)
-        {
 
+        private void ibtnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void ibtnAdmin_Click(object sender, EventArgs e)
+        {
+            ActiveBtn(sender, RBGColor.color1);
+            fAdmin f = new fAdmin();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void ibtnOrder_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new fOrder());
+            ActiveBtn(sender, RBGColor.color1);
         }
     }
 }

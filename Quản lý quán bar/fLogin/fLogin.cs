@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using BLL;
+using DAL;
 
 namespace Quản_lý_quán_bar
 {
@@ -17,39 +20,27 @@ namespace Quản_lý_quán_bar
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(tbxLogin.Text == "taksansy" && tbxPassword.Text == "ankhang123")
+            string userName = tbxLogin.Text;
+            string passwordTK = tbxPassword.Text;
+            if (Login(userName, passwordTK))
             {
-                fPubMaster f = new fPubMaster();
+                DTO_TaiKhoan loginAccount = DAL_TaiKhoan.Instance.GetAccountByUserName(userName);
+                fCafeMaster f = new fCafeMaster(loginAccount);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
-            }   
-            
+            }
             else
             {
-                if (tbxLogin.Text == "khanglong897979" && tbxPassword.Text == "ankhang123")
-                {
-                    fEmployee f = new fEmployee();
-                    this.Hide();
-                    f.ShowDialog();
-                    this.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Sai mật khẩu hoặc tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
             }
-            
         }
-
+        bool Login(string userName, string passwordTK)
+        {
+            return DAL_TaiKhoan.Instance.Login(userName, passwordTK);
+        }
         private void cbxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (cbxShowPassword.Checked)
@@ -128,11 +119,6 @@ namespace Quản_lý_quán_bar
                 e.Handled = true;
 
             }
-            
-        }
-
-        private void tbxPassword_KeyPress(object sender, KeyPressEventArgs e)
-        {
             
         }
 

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Quản_lý_quán_bar
+namespace Quản_lý_quán_bar.fMain
 {
-    public partial class fEmployee : Form
+    public partial class fOrder : Form
     {
-        public fEmployee()
+        public fOrder()
         {
             InitializeComponent();
         }

@@ -73,9 +73,39 @@ namespace Quản_lý_quán_bar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("image-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pub__1__removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Pub__1_-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pub_TAKSANSY {
             get {
                 object obj = ResourceManager.GetObject("Pub TAKSANSY", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pub_TAKSANSY__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Pub TAKSANSY (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
