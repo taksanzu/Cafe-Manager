@@ -36,20 +36,22 @@
             this.dgvwTK = new System.Windows.Forms.DataGridView();
             this.pnlEmployee = new System.Windows.Forms.Panel();
             this.tbxSearchAccount = new System.Windows.Forms.TextBox();
-            this.cbbxLoaiTK = new System.Windows.Forms.ComboBox();
+            this.tbxTenHT = new System.Windows.Forms.TextBox();
             this.tbxPassword = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbxUserName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbxTenHT = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.pnlEmployeeMN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwTK)).BeginInit();
             this.pnlEmployee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlEmployeeMN
@@ -139,11 +141,12 @@
             // pnlEmployee
             // 
             this.pnlEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.pnlEmployee.Controls.Add(this.numericUpDown1);
             this.pnlEmployee.Controls.Add(this.tbxSearchAccount);
-            this.pnlEmployee.Controls.Add(this.cbbxLoaiTK);
             this.pnlEmployee.Controls.Add(this.tbxTenHT);
             this.pnlEmployee.Controls.Add(this.tbxPassword);
             this.pnlEmployee.Controls.Add(this.label5);
+            this.pnlEmployee.Controls.Add(this.label8);
             this.pnlEmployee.Controls.Add(this.label7);
             this.pnlEmployee.Controls.Add(this.label6);
             this.pnlEmployee.Controls.Add(this.label3);
@@ -164,13 +167,12 @@
             this.tbxSearchAccount.Size = new System.Drawing.Size(250, 30);
             this.tbxSearchAccount.TabIndex = 3;
             // 
-            // cbbxLoaiTK
+            // tbxTenHT
             // 
-            this.cbbxLoaiTK.FormattingEnabled = true;
-            this.cbbxLoaiTK.Location = new System.Drawing.Point(23, 437);
-            this.cbbxLoaiTK.Name = "cbbxLoaiTK";
-            this.cbbxLoaiTK.Size = new System.Drawing.Size(250, 32);
-            this.cbbxLoaiTK.TabIndex = 2;
+            this.tbxTenHT.Location = new System.Drawing.Point(23, 372);
+            this.tbxTenHT.Name = "tbxTenHT";
+            this.tbxTenHT.Size = new System.Drawing.Size(250, 30);
+            this.tbxTenHT.TabIndex = 1;
             // 
             // tbxPassword
             // 
@@ -178,6 +180,46 @@
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.Size = new System.Drawing.Size(250, 30);
             this.tbxPassword.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(19, 345);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(129, 24);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Tên hiển thị:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(20, 550);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(125, 24);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "2: Chủ quán";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(20, 526);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(128, 24);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "1: Nhân viên";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(20, 502);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 24);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "0: Quản lý";
             // 
             // label3
             // 
@@ -206,16 +248,6 @@
             this.tbxUserName.Size = new System.Drawing.Size(250, 30);
             this.tbxUserName.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(20, 220);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "User Name:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -226,42 +258,27 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Search:";
             // 
-            // label5
+            // label1
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(19, 345);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 24);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Tên hiển thị:";
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(20, 220);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "User Name:";
             // 
-            // tbxTenHT
+            // numericUpDown1
             // 
-            this.tbxTenHT.Location = new System.Drawing.Point(23, 372);
-            this.tbxTenHT.Name = "tbxTenHT";
-            this.tbxTenHT.Size = new System.Drawing.Size(250, 30);
-            this.tbxTenHT.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(20, 502);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 24);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "0: Admin";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(20, 526);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 24);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "1: Nhân viên";
+            this.numericUpDown1.Location = new System.Drawing.Point(24, 437);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(250, 30);
+            this.numericUpDown1.TabIndex = 12;
             // 
             // fTTK
             // 
@@ -280,6 +297,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvwTK)).EndInit();
             this.pnlEmployee.ResumeLayout(false);
             this.pnlEmployee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,7 +312,6 @@
         private System.Windows.Forms.DataGridView dgvwTK;
         private System.Windows.Forms.Panel pnlEmployee;
         private System.Windows.Forms.TextBox tbxSearchAccount;
-        private System.Windows.Forms.ComboBox cbbxLoaiTK;
         private System.Windows.Forms.TextBox tbxPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -305,5 +322,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

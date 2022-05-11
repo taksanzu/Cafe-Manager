@@ -31,10 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.pbxLogo = new System.Windows.Forms.PictureBox();
+            this.lbTime = new System.Windows.Forms.Label();
             this.ibtnExit = new FontAwesome.Sharp.IconButton();
+            this.ibtnXemBaoCao = new FontAwesome.Sharp.IconButton();
             this.ibtnOrder = new FontAwesome.Sharp.IconButton();
             this.ibtnAdmin = new FontAwesome.Sharp.IconButton();
-            this.lbTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlCafeMN = new System.Windows.Forms.Panel();
             this.ibtnMinimize = new FontAwesome.Sharp.IconButton();
@@ -43,7 +44,6 @@
             this.lbName = new System.Windows.Forms.Label();
             this.ibtnChangePassword = new FontAwesome.Sharp.IconButton();
             this.ibtnProfile = new FontAwesome.Sharp.IconButton();
-            this.ibtnXemBaoCao = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.pnlCafeMN.SuspendLayout();
@@ -54,6 +54,7 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
             this.panelMenu.Controls.Add(this.pbxLogo);
+            this.panelMenu.Controls.Add(this.lbTime);
             this.panelMenu.Controls.Add(this.ibtnExit);
             this.panelMenu.Controls.Add(this.ibtnXemBaoCao);
             this.panelMenu.Controls.Add(this.ibtnOrder);
@@ -76,6 +77,17 @@
             this.pbxLogo.TabStop = false;
             this.pbxLogo.Click += new System.EventHandler(this.pbxLogo_Click);
             // 
+            // lbTime
+            // 
+            this.lbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.Location = new System.Drawing.Point(12, 637);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(106, 38);
+            this.lbTime.TabIndex = 0;
+            this.lbTime.Text = "Timer";
+            // 
             // ibtnExit
             // 
             this.ibtnExit.FlatAppearance.BorderSize = 0;
@@ -85,7 +97,7 @@
             this.ibtnExit.IconColor = System.Drawing.Color.White;
             this.ibtnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnExit.Location = new System.Drawing.Point(3, 382);
+            this.ibtnExit.Location = new System.Drawing.Point(3, 230);
             this.ibtnExit.Name = "ibtnExit";
             this.ibtnExit.Size = new System.Drawing.Size(251, 53);
             this.ibtnExit.TabIndex = 4;
@@ -93,6 +105,23 @@
             this.ibtnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibtnExit.UseVisualStyleBackColor = true;
             this.ibtnExit.Click += new System.EventHandler(this.ibtnExit_Click);
+            // 
+            // ibtnXemBaoCao
+            // 
+            this.ibtnXemBaoCao.FlatAppearance.BorderSize = 0;
+            this.ibtnXemBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnXemBaoCao.ForeColor = System.Drawing.Color.White;
+            this.ibtnXemBaoCao.IconChar = FontAwesome.Sharp.IconChar.Paperclip;
+            this.ibtnXemBaoCao.IconColor = System.Drawing.Color.White;
+            this.ibtnXemBaoCao.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnXemBaoCao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnXemBaoCao.Location = new System.Drawing.Point(3, 171);
+            this.ibtnXemBaoCao.Name = "ibtnXemBaoCao";
+            this.ibtnXemBaoCao.Size = new System.Drawing.Size(251, 53);
+            this.ibtnXemBaoCao.TabIndex = 1;
+            this.ibtnXemBaoCao.Text = "Xem báo cáo";
+            this.ibtnXemBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnXemBaoCao.UseVisualStyleBackColor = true;
             // 
             // ibtnOrder
             // 
@@ -103,7 +132,7 @@
             this.ibtnOrder.IconColor = System.Drawing.Color.White;
             this.ibtnOrder.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnOrder.Location = new System.Drawing.Point(0, 323);
+            this.ibtnOrder.Location = new System.Drawing.Point(0, 171);
             this.ibtnOrder.Name = "ibtnOrder";
             this.ibtnOrder.Size = new System.Drawing.Size(251, 53);
             this.ibtnOrder.TabIndex = 1;
@@ -121,25 +150,14 @@
             this.ibtnAdmin.IconColor = System.Drawing.Color.White;
             this.ibtnAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnAdmin.Location = new System.Drawing.Point(0, 264);
+            this.ibtnAdmin.Location = new System.Drawing.Point(0, 112);
             this.ibtnAdmin.Name = "ibtnAdmin";
             this.ibtnAdmin.Size = new System.Drawing.Size(251, 53);
             this.ibtnAdmin.TabIndex = 0;
-            this.ibtnAdmin.Text = "Chủ nhà hàng";
+            this.ibtnAdmin.Text = "Quản lý";
             this.ibtnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibtnAdmin.UseVisualStyleBackColor = true;
             this.ibtnAdmin.Click += new System.EventHandler(this.ibtnAdmin_Click);
-            // 
-            // lbTime
-            // 
-            this.lbTime.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbTime.AutoSize = true;
-            this.lbTime.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.Location = new System.Drawing.Point(860, 583);
-            this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(106, 38);
-            this.lbTime.TabIndex = 0;
-            this.lbTime.Text = "Timer";
             // 
             // timer1
             // 
@@ -195,7 +213,6 @@
             // 
             this.pnlChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
             this.pnlChildForm.Controls.Add(this.lbName);
-            this.pnlChildForm.Controls.Add(this.lbTime);
             this.pnlChildForm.Controls.Add(this.ibtnChangePassword);
             this.pnlChildForm.Controls.Add(this.ibtnProfile);
             this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -208,7 +225,7 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(6, 3);
+            this.lbName.Location = new System.Drawing.Point(3, 3);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(127, 27);
             this.lbName.TabIndex = 4;
@@ -248,23 +265,6 @@
             this.ibtnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibtnProfile.UseVisualStyleBackColor = true;
             // 
-            // ibtnXemBaoCao
-            // 
-            this.ibtnXemBaoCao.FlatAppearance.BorderSize = 0;
-            this.ibtnXemBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnXemBaoCao.ForeColor = System.Drawing.Color.White;
-            this.ibtnXemBaoCao.IconChar = FontAwesome.Sharp.IconChar.Paperclip;
-            this.ibtnXemBaoCao.IconColor = System.Drawing.Color.White;
-            this.ibtnXemBaoCao.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnXemBaoCao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnXemBaoCao.Location = new System.Drawing.Point(3, 323);
-            this.ibtnXemBaoCao.Name = "ibtnXemBaoCao";
-            this.ibtnXemBaoCao.Size = new System.Drawing.Size(251, 53);
-            this.ibtnXemBaoCao.TabIndex = 1;
-            this.ibtnXemBaoCao.Text = "Xem báo cáo";
-            this.ibtnXemBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnXemBaoCao.UseVisualStyleBackColor = true;
-            // 
             // fCafeMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -280,6 +280,7 @@
             this.Text = "fBarMaster";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fPubMaster_KeyPress);
             this.panelMenu.ResumeLayout(false);
+            this.panelMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             this.pnlCafeMN.ResumeLayout(false);
             this.pnlChildForm.ResumeLayout(false);

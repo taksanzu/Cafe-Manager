@@ -35,6 +35,7 @@
             this.ibtnThemTU = new FontAwesome.Sharp.IconButton();
             this.dgvwTU = new System.Windows.Forms.DataGridView();
             this.pnlEmployee = new System.Windows.Forms.Panel();
+            this.nrUDDonGiaTU = new System.Windows.Forms.NumericUpDown();
             this.tbxSearchTU = new System.Windows.Forms.TextBox();
             this.cbbxLoaiTU = new System.Windows.Forms.ComboBox();
             this.tbxTenTU = new System.Windows.Forms.TextBox();
@@ -44,7 +45,10 @@
             this.tbxMaTU = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.nrUDDonGiaTU = new System.Windows.Forms.NumericUpDown();
+            this.TUID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LTUId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TUPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlEmployeeMN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwTU)).BeginInit();
             this.pnlEmployee.SuspendLayout();
@@ -123,10 +127,16 @@
             this.ibtnThemTU.Size = new System.Drawing.Size(75, 47);
             this.ibtnThemTU.TabIndex = 0;
             this.ibtnThemTU.UseVisualStyleBackColor = true;
+            this.ibtnThemTU.Click += new System.EventHandler(this.ibtnThemTU_Click);
             // 
             // dgvwTU
             // 
             this.dgvwTU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvwTU.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TUID,
+            this.LTUId,
+            this.TUName,
+            this.TUPrice});
             this.dgvwTU.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvwTU.Location = new System.Drawing.Point(340, 0);
             this.dgvwTU.Name = "dgvwTU";
@@ -153,6 +163,33 @@
             this.pnlEmployee.Name = "pnlEmployee";
             this.pnlEmployee.Size = new System.Drawing.Size(340, 708);
             this.pnlEmployee.TabIndex = 12;
+            // 
+            // nrUDDonGiaTU
+            // 
+            this.nrUDDonGiaTU.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nrUDDonGiaTU.Location = new System.Drawing.Point(25, 442);
+            this.nrUDDonGiaTU.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.nrUDDonGiaTU.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nrUDDonGiaTU.Name = "nrUDDonGiaTU";
+            this.nrUDDonGiaTU.Size = new System.Drawing.Size(249, 30);
+            this.nrUDDonGiaTU.TabIndex = 15;
+            this.nrUDDonGiaTU.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             // 
             // tbxSearchTU
             // 
@@ -208,10 +245,12 @@
             // 
             // tbxMaTU
             // 
+            this.tbxMaTU.Enabled = false;
             this.tbxMaTU.Location = new System.Drawing.Point(24, 247);
             this.tbxMaTU.Name = "tbxMaTU";
             this.tbxMaTU.Size = new System.Drawing.Size(250, 30);
             this.tbxMaTU.TabIndex = 0;
+            this.tbxMaTU.TextChanged += new System.EventHandler(this.tbxMaTU_TextChanged);
             // 
             // label4
             // 
@@ -233,32 +272,37 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã thức uống:";
             // 
-            // nrUDDonGiaTU
+            // TUID
             // 
-            this.nrUDDonGiaTU.Increment = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.nrUDDonGiaTU.Location = new System.Drawing.Point(25, 442);
-            this.nrUDDonGiaTU.Maximum = new decimal(new int[] {
-            100000000,
-            0,
-            0,
-            0});
-            this.nrUDDonGiaTU.Minimum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.nrUDDonGiaTU.Name = "nrUDDonGiaTU";
-            this.nrUDDonGiaTU.Size = new System.Drawing.Size(249, 30);
-            this.nrUDDonGiaTU.TabIndex = 15;
-            this.nrUDDonGiaTU.Value = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
+            this.TUID.DataPropertyName = "tUId";
+            this.TUID.HeaderText = "Mã thức uống";
+            this.TUID.MinimumWidth = 6;
+            this.TUID.Name = "TUID";
+            this.TUID.Width = 125;
+            // 
+            // LTUId
+            // 
+            this.LTUId.DataPropertyName = "lTUId";
+            this.LTUId.HeaderText = "Mã loại thức uống";
+            this.LTUId.MinimumWidth = 6;
+            this.LTUId.Name = "LTUId";
+            this.LTUId.Width = 125;
+            // 
+            // TUName
+            // 
+            this.TUName.DataPropertyName = "tUName";
+            this.TUName.HeaderText = "Tên thức uống";
+            this.TUName.MinimumWidth = 6;
+            this.TUName.Name = "TUName";
+            this.TUName.Width = 125;
+            // 
+            // TUPrice
+            // 
+            this.TUPrice.DataPropertyName = "tUPrice";
+            this.TUPrice.HeaderText = "Đơn giá";
+            this.TUPrice.MinimumWidth = 6;
+            this.TUPrice.Name = "TUPrice";
+            this.TUPrice.Width = 125;
             // 
             // fTTTU
             // 
@@ -270,7 +314,7 @@
             this.Controls.Add(this.pnlEmployee);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fTTTU";
             this.Text = "fTTTU";
             this.pnlEmployeeMN.ResumeLayout(false);
@@ -301,5 +345,9 @@
         private System.Windows.Forms.TextBox tbxMaTU;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TUID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LTUId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TUName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TUPrice;
     }
 }

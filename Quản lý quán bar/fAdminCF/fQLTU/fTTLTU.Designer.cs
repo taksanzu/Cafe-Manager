@@ -34,6 +34,8 @@
             this.ibtnSuaLTU = new FontAwesome.Sharp.IconButton();
             this.ibtnThemLTU = new FontAwesome.Sharp.IconButton();
             this.dgvwLTU = new System.Windows.Forms.DataGridView();
+            this.lTUId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lTUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlEmployee = new System.Windows.Forms.Panel();
             this.tbxSearchLTU = new System.Windows.Forms.TextBox();
             this.tbxTenLTU = new System.Windows.Forms.TextBox();
@@ -73,6 +75,7 @@
             this.ibtnXemLTU.Size = new System.Drawing.Size(75, 47);
             this.ibtnXemLTU.TabIndex = 0;
             this.ibtnXemLTU.UseVisualStyleBackColor = true;
+            this.ibtnXemLTU.Click += new System.EventHandler(this.ibtnXemLTU_Click);
             // 
             // ibtnXoaLTU
             // 
@@ -103,6 +106,7 @@
             this.ibtnSuaLTU.Size = new System.Drawing.Size(75, 47);
             this.ibtnSuaLTU.TabIndex = 0;
             this.ibtnSuaLTU.UseVisualStyleBackColor = true;
+            this.ibtnSuaLTU.Click += new System.EventHandler(this.ibtnSuaLTU_Click);
             // 
             // ibtnThemLTU
             // 
@@ -118,10 +122,14 @@
             this.ibtnThemLTU.Size = new System.Drawing.Size(75, 47);
             this.ibtnThemLTU.TabIndex = 0;
             this.ibtnThemLTU.UseVisualStyleBackColor = true;
+            this.ibtnThemLTU.Click += new System.EventHandler(this.ibtnThemLTU_Click);
             // 
             // dgvwLTU
             // 
             this.dgvwLTU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvwLTU.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.lTUId,
+            this.lTUName});
             this.dgvwLTU.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvwLTU.Location = new System.Drawing.Point(340, 0);
             this.dgvwLTU.Name = "dgvwLTU";
@@ -129,6 +137,22 @@
             this.dgvwLTU.RowTemplate.Height = 24;
             this.dgvwLTU.Size = new System.Drawing.Size(762, 708);
             this.dgvwLTU.TabIndex = 16;
+            // 
+            // lTUId
+            // 
+            this.lTUId.DataPropertyName = "LTUId";
+            this.lTUId.HeaderText = "Mã loại thức uống";
+            this.lTUId.MinimumWidth = 6;
+            this.lTUId.Name = "lTUId";
+            this.lTUId.Width = 125;
+            // 
+            // lTUName
+            // 
+            this.lTUName.DataPropertyName = "LTUName";
+            this.lTUName.HeaderText = "Tên loại thức uống";
+            this.lTUName.MinimumWidth = 6;
+            this.lTUName.Name = "lTUName";
+            this.lTUName.Width = 125;
             // 
             // pnlEmployee
             // 
@@ -171,6 +195,7 @@
             // 
             // tbxMaLTU
             // 
+            this.tbxMaLTU.Enabled = false;
             this.tbxMaLTU.Location = new System.Drawing.Point(24, 247);
             this.tbxMaLTU.Name = "tbxMaLTU";
             this.tbxMaLTU.Size = new System.Drawing.Size(250, 30);
@@ -206,7 +231,7 @@
             this.Controls.Add(this.pnlEmployee);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fTTLTU";
             this.Text = "fTTLTU";
             this.pnlEmployeeMN.ResumeLayout(false);
@@ -232,5 +257,7 @@
         private System.Windows.Forms.TextBox tbxMaLTU;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lTUId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lTUName;
     }
 }

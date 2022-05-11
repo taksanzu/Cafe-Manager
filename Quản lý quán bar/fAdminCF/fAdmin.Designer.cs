@@ -42,6 +42,7 @@
             this.mtsTTLH = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pnlAdminCF = new System.Windows.Forms.Panel();
+            this.quayLạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@
             this.toolStripMenuItem1,
             this.msQLNV,
             this.msQLTU,
-            this.msQLNK});
+            this.msQLNK,
+            this.quayLạiToolStripMenuItem});
             this.mnsAdmin.Location = new System.Drawing.Point(0, 0);
             this.mnsAdmin.Name = "mnsAdmin";
             this.mnsAdmin.Padding = new System.Windows.Forms.Padding(10, 2, 0, 2);
@@ -124,14 +126,14 @@
             // mtsTTH
             // 
             this.mtsTTH.Name = "mtsTTH";
-            this.mtsTTH.Size = new System.Drawing.Size(224, 26);
+            this.mtsTTH.Size = new System.Drawing.Size(221, 26);
             this.mtsTTH.Text = "Thông tin hàng";
             this.mtsTTH.Click += new System.EventHandler(this.mtsTTH_Click);
             // 
             // mtsTTLH
             // 
             this.mtsTTLH.Name = "mtsTTLH";
-            this.mtsTTLH.Size = new System.Drawing.Size(224, 26);
+            this.mtsTTLH.Size = new System.Drawing.Size(221, 26);
             this.mtsTTLH.Text = "Thông tin loại hàng";
             this.mtsTTLH.Click += new System.EventHandler(this.mtsTTLH_Click);
             // 
@@ -149,6 +151,13 @@
             this.pnlAdminCF.Size = new System.Drawing.Size(1102, 708);
             this.pnlAdminCF.TabIndex = 1;
             // 
+            // quayLạiToolStripMenuItem
+            // 
+            this.quayLạiToolStripMenuItem.Name = "quayLạiToolStripMenuItem";
+            this.quayLạiToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.quayLạiToolStripMenuItem.Text = "Quay lại";
+            this.quayLạiToolStripMenuItem.Click += new System.EventHandler(this.quayLạiToolStripMenuItem_Click);
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -157,7 +166,7 @@
             this.Controls.Add(this.pnlAdminCF);
             this.Controls.Add(this.mnsAdmin);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.mnsAdmin;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "fAdmin";
@@ -184,5 +193,6 @@
         private System.Windows.Forms.ToolStripMenuItem mtsTTH;
         private System.Windows.Forms.ToolStripMenuItem mtsTTLH;
         private System.Windows.Forms.Panel pnlAdminCF;
+        private System.Windows.Forms.ToolStripMenuItem quayLạiToolStripMenuItem;
     }
 }

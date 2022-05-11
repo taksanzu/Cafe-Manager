@@ -46,8 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_HoaDon.cs" />
+    <Compile Include="DAL_InfoHoaDon.cs" />
+    <Compile Include="DAL_LoaiThucUong.cs" />
     <Compile Include="DAL_Table.cs" />
     <Compile Include="DAL_TaiKhoan.cs" />
+    <Compile Include="DAL_ThucUong.cs" />
     <Compile Include="Dataprovider.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -55,6 +59,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

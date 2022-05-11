@@ -22,21 +22,21 @@ namespace DTO
             this.Status = row["statusTB"].ToString();
         }    
         private int tableID;
-        private int TableID
+        public int TableID
         {
             get { return tableID; }
             set { tableID = value; }
         }
 
         private string tableName;
-        private string TableName
+        public string TableName
         {
             get { return tableName; }
             set { tableName = value; }
         }
 
         private string status;
-        private string Status
+        public string Status
         {
             get { return status; }
             set { status = value; }

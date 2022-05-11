@@ -66,5 +66,14 @@ namespace Quản_lý_quán_bar.fAdminCF
         {
             OpenChildForm(new fTTLH());
         }
+
+        private void quayLạiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn quay lại trang chính?","Thông báo", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }    
+        }
     }
 }
