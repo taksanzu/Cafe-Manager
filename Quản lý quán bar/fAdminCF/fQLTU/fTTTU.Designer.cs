@@ -34,6 +34,10 @@
             this.ibtnSuaTU = new FontAwesome.Sharp.IconButton();
             this.ibtnThemTU = new FontAwesome.Sharp.IconButton();
             this.dgvwTU = new System.Windows.Forms.DataGridView();
+            this.TUID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LTUId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TUPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlEmployee = new System.Windows.Forms.Panel();
             this.nrUDDonGiaTU = new System.Windows.Forms.NumericUpDown();
             this.tbxSearchTU = new System.Windows.Forms.TextBox();
@@ -45,10 +49,6 @@
             this.tbxMaTU = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.TUID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LTUId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TUPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlEmployeeMN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwTU)).BeginInit();
             this.pnlEmployee.SuspendLayout();
@@ -112,6 +112,7 @@
             this.ibtnSuaTU.Size = new System.Drawing.Size(75, 47);
             this.ibtnSuaTU.TabIndex = 0;
             this.ibtnSuaTU.UseVisualStyleBackColor = true;
+            this.ibtnSuaTU.Click += new System.EventHandler(this.ibtnSuaTU_Click);
             // 
             // ibtnThemTU
             // 
@@ -144,6 +145,38 @@
             this.dgvwTU.RowTemplate.Height = 24;
             this.dgvwTU.Size = new System.Drawing.Size(762, 708);
             this.dgvwTU.TabIndex = 13;
+            // 
+            // TUID
+            // 
+            this.TUID.DataPropertyName = "tUId";
+            this.TUID.HeaderText = "Mã thức uống";
+            this.TUID.MinimumWidth = 6;
+            this.TUID.Name = "TUID";
+            this.TUID.Width = 125;
+            // 
+            // LTUId
+            // 
+            this.LTUId.DataPropertyName = "lTUId";
+            this.LTUId.HeaderText = "Mã loại thức uống";
+            this.LTUId.MinimumWidth = 6;
+            this.LTUId.Name = "LTUId";
+            this.LTUId.Width = 125;
+            // 
+            // TUName
+            // 
+            this.TUName.DataPropertyName = "tUName";
+            this.TUName.HeaderText = "Tên thức uống";
+            this.TUName.MinimumWidth = 6;
+            this.TUName.Name = "TUName";
+            this.TUName.Width = 125;
+            // 
+            // TUPrice
+            // 
+            this.TUPrice.DataPropertyName = "tUPrice";
+            this.TUPrice.HeaderText = "Đơn giá";
+            this.TUPrice.MinimumWidth = 6;
+            this.TUPrice.Name = "TUPrice";
+            this.TUPrice.Width = 125;
             // 
             // pnlEmployee
             // 
@@ -271,38 +304,6 @@
             this.label1.Size = new System.Drawing.Size(149, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã thức uống:";
-            // 
-            // TUID
-            // 
-            this.TUID.DataPropertyName = "tUId";
-            this.TUID.HeaderText = "Mã thức uống";
-            this.TUID.MinimumWidth = 6;
-            this.TUID.Name = "TUID";
-            this.TUID.Width = 125;
-            // 
-            // LTUId
-            // 
-            this.LTUId.DataPropertyName = "lTUId";
-            this.LTUId.HeaderText = "Mã loại thức uống";
-            this.LTUId.MinimumWidth = 6;
-            this.LTUId.Name = "LTUId";
-            this.LTUId.Width = 125;
-            // 
-            // TUName
-            // 
-            this.TUName.DataPropertyName = "tUName";
-            this.TUName.HeaderText = "Tên thức uống";
-            this.TUName.MinimumWidth = 6;
-            this.TUName.Name = "TUName";
-            this.TUName.Width = 125;
-            // 
-            // TUPrice
-            // 
-            this.TUPrice.DataPropertyName = "tUPrice";
-            this.TUPrice.HeaderText = "Đơn giá";
-            this.TUPrice.MinimumWidth = 6;
-            this.TUPrice.Name = "TUPrice";
-            this.TUPrice.Width = 125;
             // 
             // fTTTU
             // 

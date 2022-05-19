@@ -101,5 +101,33 @@ namespace Quản_lý_quán_bar.fAdminCF
             add { insertDrink += value; }
             remove { insertDrink -= value; }
         }
+
+        private void ibtnSuaTU_Click(object sender, EventArgs e)
+        {
+
+            int tUId = Convert.ToInt32(tbxMaTU.Text);
+            string tUName = tbxTenTU.Text;
+            int lTUId = Convert.ToInt32(cbbxLoaiTU.SelectedIndex);
+            int tUPrice = (int) nrUDDonGiaTU.Value;
+
+
+            if (DAL_ThucUong.Instance.UpdateDrink(tUId, tUName, lTUId, tUPrice))
+            {
+                MessageBox.Show("Sửa món thành công");
+                LoadListDrink();
+                if (updateTU != null)
+                    updateTU(this, new EventArgs());
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi thêm thức ăn");
+            }
+        }
+        private event EventHandler updateTU;
+        public event EventHandler UpdateTU
+        {
+            add { updateTU += value; }
+            remove { updateTU -= value; }
+        }
     }
 }

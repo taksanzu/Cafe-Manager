@@ -32,5 +32,20 @@ namespace DAL
 
             return -1;
         }
+        public void InsertBill(int hDId)
+        {
+            Dataprovider.Instance.ExecuteNonQuery("exec USP_InsertBill @idTable", new object[] { hDId });
+        }
+        public int GetMaxIDBill()
+        {
+            try
+            {
+                return (int)Dataprovider.Instance.ExecuteScalar("SELECT MAX(hDId) FROM HoaDon");
+            }
+            catch
+            {
+                return 1;
+            }
+        }
     }
 }

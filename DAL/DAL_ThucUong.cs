@@ -59,5 +59,12 @@ namespace DAL
 
             return result > 0;
         }
+        public bool UpdateDrink(int tUId, string tUName, int lTUId, int tUPrice)
+        {
+            string query = string.Format("UPDATE ThucUong " +
+                "SET tUName = N'{1}', lTUId = {2}, tUPrice = {3} WHERE tUId = {0}", tUId, tUName, lTUId, tUPrice);
+            int result = Dataprovider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
     }
 }

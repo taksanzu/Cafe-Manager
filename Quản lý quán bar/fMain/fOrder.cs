@@ -82,6 +82,7 @@ namespace Quản_lý_quán_bar.fMain
         private void Btn_Click(object sender, EventArgs e)
         {
             int tableID = ((sender as Button).Tag as DTO_Table).TableID;
+            lsvBill.Tag = (sender as Button).Tag;
             ShowHoaDon(tableID);
         }
         #endregion
@@ -96,6 +97,35 @@ namespace Quản_lý_quán_bar.fMain
             DTO_LoaiThucUong selected = cb.SelectedItem as DTO_LoaiThucUong;
             id = selected.LTUId;
             LoadDrinkListByCategoryID(id);
+        }
+
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            DTO_Table table = lsvBill.Tag as DTO_Table;
+
+            if (table == null)
+            {
+                MessageBox.Show("Hãy chọn bàn");
+                return;
+            }
+
+            int hDId = DAL_HoaDon.Instance.GetUncheckBillIDByTableID(table.TableID);
+            int tUId = (cbFood.SelectedItem as DTO_ThucUong).TUId;
+            int count = (int)nmFoodCount.Value;
+
+            if (hDId == -1)
+            {
+                DAL_HoaDon.Instance.InsertBill(table.TableID);
+                DAL_InfoHoaDon.Instance.InsertBillInfo(DAL_HoaDon.Instance.GetMaxIDBill(), tUId, count);
+            }
+            else
+            {
+                DAL_InfoHoaDon.Instance.InsertBillInfo(hDId, tUId, count);
+            }
+
+            ShowHoaDon(table.TableID);
+
+            LoadTable();
         }
     }
 }

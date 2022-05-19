@@ -33,5 +33,9 @@ namespace DAL
 
             return listBillInfo;
         }
+        public void InsertBillInfo(int hDId, int tUId, int count)
+        {
+            Dataprovider.Instance.ExecuteNonQuery("USP_InsertBillInfo @idBill , @idFood , @count", new object[] { hDId, tUId, count });
+        }
     }
 }
