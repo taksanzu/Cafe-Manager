@@ -171,6 +171,7 @@
             // 
             // tbxMaLH
             // 
+            this.tbxMaLH.Enabled = false;
             this.tbxMaLH.Location = new System.Drawing.Point(24, 247);
             this.tbxMaLH.Name = "tbxMaLH";
             this.tbxMaLH.Size = new System.Drawing.Size(250, 30);
@@ -206,7 +207,7 @@
             this.Controls.Add(this.pnlEmployee);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fTTLH";
             this.Text = "fTTLH";
             this.pnlEmployeeMN.ResumeLayout(false);

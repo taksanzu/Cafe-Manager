@@ -40,33 +40,37 @@
             this.msQLNK = new System.Windows.Forms.ToolStripMenuItem();
             this.mtsTTH = new System.Windows.Forms.ToolStripMenuItem();
             this.mtsTTLH = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.pnlAdminCF = new System.Windows.Forms.Panel();
             this.quayLạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.msQLB = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlAdminCF = new System.Windows.Forms.Panel();
             this.mnsAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnsAdmin
             // 
             this.mnsAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
+            this.mnsAdmin.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnsAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnsAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.msQLNV,
             this.msQLTU,
             this.msQLNK,
+            this.msQLB,
             this.quayLạiToolStripMenuItem});
             this.mnsAdmin.Location = new System.Drawing.Point(0, 0);
             this.mnsAdmin.Name = "mnsAdmin";
             this.mnsAdmin.Padding = new System.Windows.Forms.Padding(10, 2, 0, 2);
-            this.mnsAdmin.Size = new System.Drawing.Size(1102, 28);
+            this.mnsAdmin.Size = new System.Drawing.Size(1102, 29);
             this.mnsAdmin.TabIndex = 0;
             this.mnsAdmin.Text = "menuStrip1";
+            this.mnsAdmin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mnsAdmin_MouseDown);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(14, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(14, 26);
             // 
             // msQLNV
             // 
@@ -74,7 +78,7 @@
             this.mtsTTNV,
             this.mtsTTTK});
             this.msQLNV.Name = "msQLNV";
-            this.msQLNV.Size = new System.Drawing.Size(140, 24);
+            this.msQLNV.Size = new System.Drawing.Size(140, 26);
             this.msQLNV.Text = "Quản lý nhân viên";
             // 
             // mtsTTNV
@@ -97,7 +101,7 @@
             this.mtsTTTU,
             this.mtsTTLTU});
             this.msQLTU.Name = "msQLTU";
-            this.msQLTU.Size = new System.Drawing.Size(144, 24);
+            this.msQLTU.Size = new System.Drawing.Size(144, 26);
             this.msQLTU.Text = "Quản lý thức uống";
             // 
             // mtsTTTU
@@ -120,7 +124,7 @@
             this.mtsTTH,
             this.mtsTTLH});
             this.msQLNK.Name = "msQLNK";
-            this.msQLNK.Size = new System.Drawing.Size(129, 24);
+            this.msQLNK.Size = new System.Drawing.Size(129, 26);
             this.msQLNK.Text = "Quản lý nhà kho";
             // 
             // mtsTTH
@@ -137,26 +141,35 @@
             this.mtsTTLH.Text = "Thông tin loại hàng";
             this.mtsTTLH.Click += new System.EventHandler(this.mtsTTLH_Click);
             // 
+            // quayLạiToolStripMenuItem
+            // 
+            this.quayLạiToolStripMenuItem.Name = "quayLạiToolStripMenuItem";
+            this.quayLạiToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
+            this.quayLạiToolStripMenuItem.Text = "Quay lại";
+            this.quayLạiToolStripMenuItem.Click += new System.EventHandler(this.quayLạiToolStripMenuItem_Click);
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // msQLB
+            // 
+            this.msQLB.Name = "msQLB";
+            this.msQLB.Size = new System.Drawing.Size(102, 26);
+            this.msQLB.Text = "Quản lý bàn";
+            // 
             // pnlAdminCF
             // 
+            this.pnlAdminCF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.pnlAdminCF.BackgroundImage = global::Quản_lý_quán_bar.Properties.Resources.p1g3t168vk8bs17s41eng1v4mcg24_0;
+            this.pnlAdminCF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlAdminCF.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAdminCF.Location = new System.Drawing.Point(0, 28);
+            this.pnlAdminCF.Location = new System.Drawing.Point(0, 29);
             this.pnlAdminCF.Name = "pnlAdminCF";
-            this.pnlAdminCF.Size = new System.Drawing.Size(1102, 708);
+            this.pnlAdminCF.Size = new System.Drawing.Size(1102, 707);
             this.pnlAdminCF.TabIndex = 1;
-            // 
-            // quayLạiToolStripMenuItem
-            // 
-            this.quayLạiToolStripMenuItem.Name = "quayLạiToolStripMenuItem";
-            this.quayLạiToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
-            this.quayLạiToolStripMenuItem.Text = "Quay lại";
-            this.quayLạiToolStripMenuItem.Click += new System.EventHandler(this.quayLạiToolStripMenuItem_Click);
             // 
             // fAdmin
             // 
@@ -194,5 +207,6 @@
         private System.Windows.Forms.ToolStripMenuItem mtsTTLH;
         private System.Windows.Forms.Panel pnlAdminCF;
         private System.Windows.Forms.ToolStripMenuItem quayLạiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem msQLB;
     }
 }

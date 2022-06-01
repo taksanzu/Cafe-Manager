@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DTO;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,8 +31,11 @@ namespace Quản_lý_quán_bar.fMain
 
             foreach (DTO_Table item in tableList)
             {
-                Button btn = new Button() { Width = DAL_Table.TableWidth, Height = DAL_Table.TableHeight };
-                btn.Text = item.TableName + Environment.NewLine + item.Status;
+                IconButton btn = new IconButton() { Width = DAL_Table.TableWidth, Height = DAL_Table.TableHeight };
+                btn.IconChar = IconChar.Chair;
+                btn.IconSize = 30;
+                btn.TextImageRelation = TextImageRelation.ImageAboveText;
+                btn.Text = item.TableName +Environment.NewLine + item.Status;  
                 btn.Click += Btn_Click;
                 btn.Tag = item;
                 switch (item.Status)
@@ -73,11 +77,11 @@ namespace Quản_lý_quán_bar.fMain
                 totalPrice += item.TotalPrice;
                 lsvBill.Items.Add(lsvItem);
             }
-            CultureInfo culture = new CultureInfo("vi-VN");
+            //CultureInfo culture = new CultureInfo("vi-VN");
 
             //Thread.CurrentThread.CurrentCulture = culture;
 
-            txbTotalPrice.Text = totalPrice.ToString("c", culture);
+            txbTotalPrice.Text = totalPrice.ToString(/*"c", culture*/);
         }    
         private void Btn_Click(object sender, EventArgs e)
         {
@@ -126,6 +130,31 @@ namespace Quản_lý_quán_bar.fMain
             ShowHoaDon(table.TableID);
 
             LoadTable();
+        }
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            DTO_Table table = lsvBill.Tag as DTO_Table;
+            if (table == null)
+            {
+                MessageBox.Show("Hãy chọn bàn");
+                return;
+            }
+
+            int hDId = DAL_HoaDon.Instance.GetUncheckBillIDByTableID(table.TableID);
+            int discount = (int)nmDisCount.Value;
+            double totalPrice = Convert.ToDouble(txbTotalPrice.Text.Split('.')[0]);
+
+            double finalTotalPrice = totalPrice - (totalPrice / 100) * discount;
+            if (hDId != -1)
+            {
+                if (MessageBox.Show(String.Format("Bạn có chắc thanh toán hóa đơn cho bàn {0}\nTổng tiền - (Tổng tiền / 100) x Giảm giá\n=> {1} - ({1} / 100) x {2} = {3}", table.TableName, totalPrice, discount, finalTotalPrice), "Thông báo ", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    DAL_HoaDon.Instance.CheckOut(hDId, discount);
+                    ShowHoaDon(table.TableID);
+                    LoadTable();
+                }
+            }
         }
     }
 }

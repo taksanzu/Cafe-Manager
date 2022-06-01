@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO_Hang.cs" />
     <Compile Include="DTO_HoaDon.cs" />
     <Compile Include="DTO_InfoHoaDon.cs" />
     <Compile Include="DTO_LoaiHang.cs" />

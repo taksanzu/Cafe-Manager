@@ -26,7 +26,7 @@ namespace DAL
 
             string query = "SELECT f.tUName, bi.count, f.tUPrice, f.tUPrice*bi.count AS totalPrice " +
                 "FROM InfoHoaDon AS bi, HoaDon AS b, ThucUong AS f " +
-                "WHERE bi.hDId = b.hDId AND bi.tUID = f.tUID AND b.tableID = " + tableID;
+                "WHERE bi.hDId = b.hDId AND bi.tUID = f.tUID AND b.statusBill = 0 and b.tableID = " + tableID;
             DataTable data = Dataprovider.Instance.ExecuteQuery(query);
 
             foreach (DataRow item in data.Rows)

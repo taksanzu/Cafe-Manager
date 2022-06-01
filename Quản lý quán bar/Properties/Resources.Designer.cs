@@ -83,6 +83,16 @@ namespace Quản_lý_quán_bar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap p1g3t168vk8bs17s41eng1v4mcg24_0 {
+            get {
+                object obj = ResourceManager.GetObject("p1g3t168vk8bs17s41eng1v4mcg24-0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pub__1__removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Pub__1_-removebg-preview", resourceCulture);

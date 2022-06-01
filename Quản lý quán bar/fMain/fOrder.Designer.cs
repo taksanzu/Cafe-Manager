@@ -47,6 +47,8 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).BeginInit();
             this.panel3.SuspendLayout();
@@ -140,6 +142,8 @@
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.txbTotalPrice);
             this.panel3.Controls.Add(this.nmDisCount);
             this.panel3.Controls.Add(this.btnCheckOut);
@@ -164,8 +168,18 @@
             // 
             // nmDisCount
             // 
+            this.nmDisCount.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.nmDisCount.Location = new System.Drawing.Point(201, 32);
             this.nmDisCount.Margin = new System.Windows.Forms.Padding(4);
+            this.nmDisCount.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             this.nmDisCount.Name = "nmDisCount";
             this.nmDisCount.Size = new System.Drawing.Size(138, 28);
             this.nmDisCount.TabIndex = 4;
@@ -181,6 +195,7 @@
             this.btnCheckOut.TabIndex = 3;
             this.btnCheckOut.Text = "Thanh toán";
             this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // panel2
             // 
@@ -234,6 +249,24 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 21);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "30/4 - 1/5: giảm 10%";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 21);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "13/6: giảm 15%";
+            // 
             // fOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
@@ -279,5 +312,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -17,8 +17,8 @@ namespace DAL
             private set { DAL_Table.instance = value; }
         }
         private DAL_Table(){}
-        public static int TableWidth = 77;
-        public static int TableHeight = 77;
+        public static int TableWidth = 90;
+        public static int TableHeight = 90;
         public List<DTO_Table> LoadTableList()
         {
             List<DTO_Table> tablelist = new List<DTO_Table>();

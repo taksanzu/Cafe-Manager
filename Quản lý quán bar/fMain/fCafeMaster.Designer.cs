@@ -212,6 +212,8 @@
             // pnlChildForm
             // 
             this.pnlChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.pnlChildForm.BackgroundImage = global::Quản_lý_quán_bar.Properties.Resources.p1g3t168vk8bs17s41eng1v4mcg24_0;
+            this.pnlChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlChildForm.Controls.Add(this.lbName);
             this.pnlChildForm.Controls.Add(this.ibtnChangePassword);
             this.pnlChildForm.Controls.Add(this.ibtnProfile);
@@ -224,6 +226,8 @@
             // lbName
             // 
             this.lbName.AutoSize = true;
+            this.lbName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.lbName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.Location = new System.Drawing.Point(3, 3);
             this.lbName.Name = "lbName";
@@ -234,11 +238,11 @@
             // ibtnChangePassword
             // 
             this.ibtnChangePassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ibtnChangePassword.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ibtnChangePassword.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.ibtnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnChangePassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ibtnChangePassword.ForeColor = System.Drawing.Color.Black;
             this.ibtnChangePassword.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            this.ibtnChangePassword.IconColor = System.Drawing.Color.White;
+            this.ibtnChangePassword.IconColor = System.Drawing.Color.Black;
             this.ibtnChangePassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnChangePassword.Location = new System.Drawing.Point(424, 378);
             this.ibtnChangePassword.Name = "ibtnChangePassword";
@@ -251,11 +255,11 @@
             // ibtnProfile
             // 
             this.ibtnProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ibtnProfile.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ibtnProfile.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.ibtnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnProfile.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ibtnProfile.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ibtnProfile.IconChar = FontAwesome.Sharp.IconChar.Pager;
-            this.ibtnProfile.IconColor = System.Drawing.Color.White;
+            this.ibtnProfile.IconColor = System.Drawing.Color.Black;
             this.ibtnProfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnProfile.Location = new System.Drawing.Point(424, 313);
             this.ibtnProfile.Name = "ibtnProfile";

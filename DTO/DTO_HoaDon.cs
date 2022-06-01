@@ -9,13 +9,13 @@ namespace DTO
 {
     public class DTO_HoaDon
     {
-        public DTO_HoaDon(int hDId, DateTime? ngayVao, DateTime? ngayRa, int statusBill/*, int discount = 0*/)
+        public DTO_HoaDon(int hDId, DateTime? ngayVao, DateTime? ngayRa, int statusBill, int discount = 0)
         {
             this.HDId = hDId;
             this.NgayVao = ngayVao;
             this.NgayRa = ngayRa;
             this.StatusBill = statusBill;
-            //this.Discount = discount;
+            this.Discount = discount;
         }
         public DTO_HoaDon(DataRow row)
         {
@@ -27,8 +27,8 @@ namespace DTO
 
             this.StatusBill = (int)row["statusBill"];
 
-            //if (row["discount"].ToString() != "")
-            //    this.Discount = (int)row["discount"];
+            if (row["discount"].ToString() != "")
+                this.Discount = (int)row["discount"];
         }
         private int hDId;
         public int HDId
@@ -54,12 +54,12 @@ namespace DTO
             get { return statusBill; }
             set { statusBill = value; }
         }
-        //private int discount;
+        private int discount;
 
-        //public int Discount
-        //{
-        //    get { return discount; }
-        //    set { discount = value; }
-        //}
+        public int Discount
+        {
+            get { return discount; }
+            set { discount = value; }
+        }
     }
 }

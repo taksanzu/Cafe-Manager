@@ -19,10 +19,9 @@ namespace DAL
         }
 
         private DAL_HoaDon() { }
-        public int GetUncheckBillIDByTableID(int hDId)
+        public int GetUncheckBillIDByTableID(int tableId)
         {
-            DataTable data = Dataprovider.Instance.ExecuteQuery("SELECT * " +
-                "FROM HoaDon WHERE tableID = " + hDId + " AND statusBill = 0");
+            DataTable data = Dataprovider.Instance.ExecuteQuery("select * from HoaDon where tableID = "+ tableId +" and statusBill = 0");
 
             if (data.Rows.Count > 0)
             {
@@ -31,6 +30,11 @@ namespace DAL
             }
 
             return -1;
+        }
+        public void CheckOut(int hDId, int discount)
+        {
+            string query = "UPDATE HoaDon SET statusBill = 1, discount = "+ discount +" where hDId = " + hDId;
+            Dataprovider.Instance.ExecuteNonQuery(query);
         }
         public void InsertBill(int hDId)
         {
