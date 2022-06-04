@@ -30,24 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.pbxLogo = new System.Windows.Forms.PictureBox();
             this.lbTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pnlCafeMN = new System.Windows.Forms.Panel();
+            this.pnlChildForm = new System.Windows.Forms.Panel();
+            this.lbName = new System.Windows.Forms.Label();
+            this.ibtnChangePassword = new FontAwesome.Sharp.IconButton();
+            this.ibtnMinimize = new FontAwesome.Sharp.IconButton();
+            this.ibtnMaximize = new FontAwesome.Sharp.IconButton();
+            this.pbxLogo = new System.Windows.Forms.PictureBox();
             this.ibtnExit = new FontAwesome.Sharp.IconButton();
             this.ibtnXemBaoCao = new FontAwesome.Sharp.IconButton();
             this.ibtnOrder = new FontAwesome.Sharp.IconButton();
             this.ibtnAdmin = new FontAwesome.Sharp.IconButton();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pnlCafeMN = new System.Windows.Forms.Panel();
-            this.ibtnMinimize = new FontAwesome.Sharp.IconButton();
-            this.ibtnMaximize = new FontAwesome.Sharp.IconButton();
-            this.pnlChildForm = new System.Windows.Forms.Panel();
-            this.lbName = new System.Windows.Forms.Label();
-            this.ibtnChangePassword = new FontAwesome.Sharp.IconButton();
-            this.ibtnProfile = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.pnlCafeMN.SuspendLayout();
             this.pnlChildForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -65,6 +64,108 @@
             this.panelMenu.Size = new System.Drawing.Size(251, 684);
             this.panelMenu.TabIndex = 0;
             // 
+            // lbTime
+            // 
+            this.lbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.Location = new System.Drawing.Point(12, 637);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(106, 38);
+            this.lbTime.TabIndex = 0;
+            this.lbTime.Text = "Timer";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // pnlCafeMN
+            // 
+            this.pnlCafeMN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
+            this.pnlCafeMN.Controls.Add(this.ibtnMinimize);
+            this.pnlCafeMN.Controls.Add(this.ibtnMaximize);
+            this.pnlCafeMN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlCafeMN.Location = new System.Drawing.Point(251, 0);
+            this.pnlCafeMN.Name = "pnlCafeMN";
+            this.pnlCafeMN.Size = new System.Drawing.Size(1010, 40);
+            this.pnlCafeMN.TabIndex = 3;
+            this.pnlCafeMN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlCafeMN_MouseDown);
+            // 
+            // pnlChildForm
+            // 
+            this.pnlChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.pnlChildForm.BackgroundImage = global::Quản_lý_quán_bar.Properties.Resources.p1g3t168vk8bs17s41eng1v4mcg24_0;
+            this.pnlChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlChildForm.Controls.Add(this.lbName);
+            this.pnlChildForm.Controls.Add(this.ibtnChangePassword);
+            this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlChildForm.Location = new System.Drawing.Point(251, 40);
+            this.pnlChildForm.Name = "pnlChildForm";
+            this.pnlChildForm.Size = new System.Drawing.Size(1010, 644);
+            this.pnlChildForm.TabIndex = 4;
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(3, 3);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(117, 27);
+            this.lbName.TabIndex = 4;
+            this.lbName.Text = "Xin chào:";
+            // 
+            // ibtnChangePassword
+            // 
+            this.ibtnChangePassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ibtnChangePassword.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ibtnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnChangePassword.ForeColor = System.Drawing.Color.Black;
+            this.ibtnChangePassword.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            this.ibtnChangePassword.IconColor = System.Drawing.Color.Black;
+            this.ibtnChangePassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnChangePassword.Location = new System.Drawing.Point(427, 299);
+            this.ibtnChangePassword.Name = "ibtnChangePassword";
+            this.ibtnChangePassword.Size = new System.Drawing.Size(180, 49);
+            this.ibtnChangePassword.TabIndex = 3;
+            this.ibtnChangePassword.Text = "Đổi mật khẩu";
+            this.ibtnChangePassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnChangePassword.UseVisualStyleBackColor = true;
+            this.ibtnChangePassword.Click += new System.EventHandler(this.ibtnChangePassword_Click);
+            // 
+            // ibtnMinimize
+            // 
+            this.ibtnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ibtnMinimize.FlatAppearance.BorderSize = 0;
+            this.ibtnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.ibtnMinimize.IconColor = System.Drawing.Color.Black;
+            this.ibtnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnMinimize.IconSize = 35;
+            this.ibtnMinimize.Location = new System.Drawing.Point(930, 0);
+            this.ibtnMinimize.Name = "ibtnMinimize";
+            this.ibtnMinimize.Size = new System.Drawing.Size(40, 40);
+            this.ibtnMinimize.TabIndex = 1;
+            this.ibtnMinimize.UseVisualStyleBackColor = true;
+            this.ibtnMinimize.Click += new System.EventHandler(this.ibtnMinimize_Click);
+            // 
+            // ibtnMaximize
+            // 
+            this.ibtnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ibtnMaximize.FlatAppearance.BorderSize = 0;
+            this.ibtnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.ibtnMaximize.IconColor = System.Drawing.Color.Black;
+            this.ibtnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnMaximize.IconSize = 35;
+            this.ibtnMaximize.Location = new System.Drawing.Point(970, 0);
+            this.ibtnMaximize.Name = "ibtnMaximize";
+            this.ibtnMaximize.Size = new System.Drawing.Size(40, 40);
+            this.ibtnMaximize.TabIndex = 0;
+            this.ibtnMaximize.UseVisualStyleBackColor = true;
+            this.ibtnMaximize.Click += new System.EventHandler(this.ibtnMaximize_Click);
+            // 
             // pbxLogo
             // 
             this.pbxLogo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -76,17 +177,6 @@
             this.pbxLogo.TabIndex = 0;
             this.pbxLogo.TabStop = false;
             this.pbxLogo.Click += new System.EventHandler(this.pbxLogo_Click);
-            // 
-            // lbTime
-            // 
-            this.lbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbTime.AutoSize = true;
-            this.lbTime.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.Location = new System.Drawing.Point(12, 637);
-            this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(106, 38);
-            this.lbTime.TabIndex = 0;
-            this.lbTime.Text = "Timer";
             // 
             // ibtnExit
             // 
@@ -122,6 +212,7 @@
             this.ibtnXemBaoCao.Text = "Xem báo cáo";
             this.ibtnXemBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibtnXemBaoCao.UseVisualStyleBackColor = true;
+            this.ibtnXemBaoCao.Click += new System.EventHandler(this.ibtnXemBaoCao_Click);
             // 
             // ibtnOrder
             // 
@@ -159,116 +250,6 @@
             this.ibtnAdmin.UseVisualStyleBackColor = true;
             this.ibtnAdmin.Click += new System.EventHandler(this.ibtnAdmin_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
-            // 
-            // pnlCafeMN
-            // 
-            this.pnlCafeMN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.pnlCafeMN.Controls.Add(this.ibtnMinimize);
-            this.pnlCafeMN.Controls.Add(this.ibtnMaximize);
-            this.pnlCafeMN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlCafeMN.Location = new System.Drawing.Point(251, 0);
-            this.pnlCafeMN.Name = "pnlCafeMN";
-            this.pnlCafeMN.Size = new System.Drawing.Size(1010, 40);
-            this.pnlCafeMN.TabIndex = 3;
-            this.pnlCafeMN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlCafeMN_MouseDown);
-            // 
-            // ibtnMinimize
-            // 
-            this.ibtnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ibtnMinimize.FlatAppearance.BorderSize = 0;
-            this.ibtnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.ibtnMinimize.IconColor = System.Drawing.Color.Black;
-            this.ibtnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnMinimize.IconSize = 35;
-            this.ibtnMinimize.Location = new System.Drawing.Point(930, 0);
-            this.ibtnMinimize.Name = "ibtnMinimize";
-            this.ibtnMinimize.Size = new System.Drawing.Size(40, 40);
-            this.ibtnMinimize.TabIndex = 1;
-            this.ibtnMinimize.UseVisualStyleBackColor = true;
-            this.ibtnMinimize.Click += new System.EventHandler(this.ibtnMinimize_Click);
-            // 
-            // ibtnMaximize
-            // 
-            this.ibtnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ibtnMaximize.FlatAppearance.BorderSize = 0;
-            this.ibtnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.ibtnMaximize.IconColor = System.Drawing.Color.Black;
-            this.ibtnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnMaximize.IconSize = 35;
-            this.ibtnMaximize.Location = new System.Drawing.Point(970, 0);
-            this.ibtnMaximize.Name = "ibtnMaximize";
-            this.ibtnMaximize.Size = new System.Drawing.Size(40, 40);
-            this.ibtnMaximize.TabIndex = 0;
-            this.ibtnMaximize.UseVisualStyleBackColor = true;
-            this.ibtnMaximize.Click += new System.EventHandler(this.ibtnMaximize_Click);
-            // 
-            // pnlChildForm
-            // 
-            this.pnlChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
-            this.pnlChildForm.BackgroundImage = global::Quản_lý_quán_bar.Properties.Resources.p1g3t168vk8bs17s41eng1v4mcg24_0;
-            this.pnlChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlChildForm.Controls.Add(this.lbName);
-            this.pnlChildForm.Controls.Add(this.ibtnChangePassword);
-            this.pnlChildForm.Controls.Add(this.ibtnProfile);
-            this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlChildForm.Location = new System.Drawing.Point(251, 40);
-            this.pnlChildForm.Name = "pnlChildForm";
-            this.pnlChildForm.Size = new System.Drawing.Size(1010, 644);
-            this.pnlChildForm.TabIndex = 4;
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
-            this.lbName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(3, 3);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(127, 27);
-            this.lbName.TabIndex = 4;
-            this.lbName.Text = "Xin Chào: ";
-            // 
-            // ibtnChangePassword
-            // 
-            this.ibtnChangePassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ibtnChangePassword.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ibtnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnChangePassword.ForeColor = System.Drawing.Color.Black;
-            this.ibtnChangePassword.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            this.ibtnChangePassword.IconColor = System.Drawing.Color.Black;
-            this.ibtnChangePassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnChangePassword.Location = new System.Drawing.Point(424, 378);
-            this.ibtnChangePassword.Name = "ibtnChangePassword";
-            this.ibtnChangePassword.Size = new System.Drawing.Size(180, 49);
-            this.ibtnChangePassword.TabIndex = 3;
-            this.ibtnChangePassword.Text = "Đổi mật khẩu";
-            this.ibtnChangePassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnChangePassword.UseVisualStyleBackColor = true;
-            // 
-            // ibtnProfile
-            // 
-            this.ibtnProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ibtnProfile.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ibtnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnProfile.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ibtnProfile.IconChar = FontAwesome.Sharp.IconChar.Pager;
-            this.ibtnProfile.IconColor = System.Drawing.Color.Black;
-            this.ibtnProfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnProfile.Location = new System.Drawing.Point(424, 313);
-            this.ibtnProfile.Name = "ibtnProfile";
-            this.ibtnProfile.Size = new System.Drawing.Size(180, 49);
-            this.ibtnProfile.TabIndex = 2;
-            this.ibtnProfile.Text = "Thông tin";
-            this.ibtnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnProfile.UseVisualStyleBackColor = true;
-            // 
             // fCafeMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -285,10 +266,10 @@
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fPubMaster_KeyPress);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             this.pnlCafeMN.ResumeLayout(false);
             this.pnlChildForm.ResumeLayout(false);
             this.pnlChildForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -307,8 +288,7 @@
         private FontAwesome.Sharp.IconButton ibtnMaximize;
         private System.Windows.Forms.Panel pnlChildForm;
         private FontAwesome.Sharp.IconButton ibtnChangePassword;
-        private FontAwesome.Sharp.IconButton ibtnProfile;
-        private System.Windows.Forms.Label lbName;
         private FontAwesome.Sharp.IconButton ibtnXemBaoCao;
+        private System.Windows.Forms.Label lbName;
     }
 }

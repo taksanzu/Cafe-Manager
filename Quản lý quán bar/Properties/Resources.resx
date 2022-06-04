@@ -124,8 +124,14 @@
   <data name="Pub TAKSANSY" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pub TAKSANSY.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Pub-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pub-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="image-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="p1g3t168vk8bs17s41eng1v4mcg24-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\p1g3t168vk8bs17s41eng1v4mcg24-0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sài Thành (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sài Thành (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,7 +142,7 @@
   <data name="BAr Taksansy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BAr Taksansy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="p1g3t168vk8bs17s41eng1v4mcg24-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\p1g3t168vk8bs17s41eng1v4mcg24-0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="image-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

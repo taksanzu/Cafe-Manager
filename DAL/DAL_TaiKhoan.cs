@@ -18,6 +18,10 @@ namespace DAL
             private set { instance = value; }
         }
         private DAL_TaiKhoan() { }
+        public DataTable GetListAccount()
+        {
+            return Dataprovider.Instance.ExecuteQuery("select userName, displayName, TKType from TaiKhoan");
+        }
         public bool Login(string userName, string passwordTK)
         {
             //byte[] temp = ASCIIEncoding.ASCII.GetBytes(passwordTK);
@@ -49,5 +53,50 @@ namespace DAL
 
             return null;
         }
+        public bool UpdateAccount(string userName, string displayName, string pass, string newPass)
+        {
+            int result = Dataprovider.Instance.ExecuteNonQuery("exec USP_UpdateAccount @userName , @displayName , @password , @newPassword", new object[] { userName, displayName, pass, newPass });
+
+            return result > 0;
+        }
+        public bool InsertAccount(string userName, string displayName, int TKType)
+        {
+            string query = string.Format("INSERT TaiKhoan (userName, passwordTK, displayName, TKType)" +
+                "VALUES  ( '{0}', '1', '{1}', {2})", userName, displayName, TKType);
+            int result = Dataprovider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+        public bool UpdateAccountFromAdmin(string userName, string displayName, int TKType)
+        {
+            string query = string.Format("UPDATE TaiKhoan " +
+                "SET displayName = N'{1}', TKType = {2} " +
+                "WHERE userName = '{0}' ", userName, displayName, TKType);
+            int result = Dataprovider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool DeleteTK(string userName)
+        {
+            string query = string.Format("delete from taiKhoan  WHERE userName = '{0}' ", userName);
+            int result = Dataprovider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool ResetPassword(string userName)
+        {
+            string query = string.Format("UPDATE TaiKhoan " +
+                "SET passwordTK = '1' " +
+                "WHERE userName = '{0}' ", userName);
+            int result = Dataprovider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool KtraTrung(string userName)
+        {
+           
+            string sqlqrKtra =String.Format("Select count(*) from TaiKhoan where userName = '{0}'", userName);
+            int KTT = (int)Dataprovider.Instance.ExecuteScalar(sqlqrKtra);
+            return KTT > 0;
+
+        }
+        
     }
 }

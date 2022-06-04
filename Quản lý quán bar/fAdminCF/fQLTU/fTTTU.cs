@@ -44,20 +44,19 @@ namespace Quản_lý_quán_bar.fAdminCF
             ThucUongList.DataSource = DAL_ThucUong.Instance.GetListDrink();
             
         }
-
         private void tbxMaTU_TextChanged(object sender, EventArgs e)
         {
             try
             {
                 if (dgvwTU.SelectedCells.Count > 0)
                 {
-                    int lTUId = Convert.ToInt32(dgvwTU.SelectedCells[0].OwningRow.Cells["lTUId"].Value);
+                    int lTUId = Convert.ToInt32(dgvwTU.SelectedCells[1].OwningRow.Cells["lTUId"].Value);
 
                     DTO_LoaiThucUong cateogory = DAL_LoaiThucUong.Instance.GetCategoryByID(lTUId);
 
                     cbbxLoaiTU.SelectedItem = cateogory;
 
-                    int index = 0;
+                    int index = -1;
                     int i = 0;
                     foreach (DTO_LoaiThucUong item in cbbxLoaiTU.Items)
                     {
@@ -76,7 +75,6 @@ namespace Quản_lý_quán_bar.fAdminCF
             
             
         }
-
         private void ibtnThemTU_Click(object sender, EventArgs e)
         {
             string tUName = tbxTenTU.Text;
@@ -101,15 +99,13 @@ namespace Quản_lý_quán_bar.fAdminCF
             add { insertDrink += value; }
             remove { insertDrink -= value; }
         }
-
         private void ibtnSuaTU_Click(object sender, EventArgs e)
         {
 
             int tUId = Convert.ToInt32(tbxMaTU.Text);
             string tUName = tbxTenTU.Text;
-            int lTUId = Convert.ToInt32(cbbxLoaiTU.SelectedIndex);
+            int lTUId =(cbbxLoaiTU.SelectedItem as DTO_LoaiThucUong).LTUId;
             int tUPrice = (int) nrUDDonGiaTU.Value;
-
 
             if (DAL_ThucUong.Instance.UpdateDrink(tUId, tUName, lTUId, tUPrice))
             {
@@ -128,6 +124,30 @@ namespace Quản_lý_quán_bar.fAdminCF
         {
             add { updateTU += value; }
             remove { updateTU -= value; }
+        }
+        private void ibtnXoaTU_Click(object sender, EventArgs e)
+        {
+            int tUId = Convert.ToInt32(tbxMaTU.Text);
+
+            if (DAL_ThucUong.Instance.DeleteDrink(tUId))
+            {
+                MessageBox.Show("Xóa món thành công");
+                LoadListDrink();
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi thêm thức ăn");
+            }
+        }
+        List<DTO_ThucUong> SearchDrinkByName(string name)
+        {
+            List<DTO_ThucUong> listdrink = DAL_ThucUong.Instance.SearchDrinkByName(name);
+
+            return listdrink;
+        }
+        private void tbxSearchTU_TextChanged(object sender, EventArgs e)
+        {
+            ThucUongList.DataSource = SearchDrinkByName(tbxSearchTU.Text);
         }
     }
 }

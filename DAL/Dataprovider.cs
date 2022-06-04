@@ -21,7 +21,7 @@ namespace DAL
         private Dataprovider() { }
 
 
-        public static string connectionSTR = @"Data Source=LAPTOP-BO660QMT\TAKSANSY;Initial Catalog=dbCafeManager;Integrated Security=True";
+        public static string connectionSTR = @"Data Source=.\;Initial Catalog=dbCafeManager;Integrated Security=True";
 
 
 

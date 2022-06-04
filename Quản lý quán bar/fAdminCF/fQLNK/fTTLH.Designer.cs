@@ -73,6 +73,7 @@
             this.ibtnXemLH.Size = new System.Drawing.Size(75, 47);
             this.ibtnXemLH.TabIndex = 0;
             this.ibtnXemLH.UseVisualStyleBackColor = true;
+            this.ibtnXemLH.Click += new System.EventHandler(this.ibtnXemLH_Click);
             // 
             // ibtnXoaLH
             // 
@@ -88,6 +89,7 @@
             this.ibtnXoaLH.Size = new System.Drawing.Size(75, 47);
             this.ibtnXoaLH.TabIndex = 0;
             this.ibtnXoaLH.UseVisualStyleBackColor = true;
+            this.ibtnXoaLH.Click += new System.EventHandler(this.ibtnXoaLH_Click);
             // 
             // ibtnSuaLH
             // 
@@ -103,6 +105,7 @@
             this.ibtnSuaLH.Size = new System.Drawing.Size(75, 47);
             this.ibtnSuaLH.TabIndex = 0;
             this.ibtnSuaLH.UseVisualStyleBackColor = true;
+            this.ibtnSuaLH.Click += new System.EventHandler(this.ibtnSuaLH_Click);
             // 
             // ibtnThemLH
             // 
@@ -151,6 +154,7 @@
             this.tbxSearchLH.Name = "tbxSearchLH";
             this.tbxSearchLH.Size = new System.Drawing.Size(250, 30);
             this.tbxSearchLH.TabIndex = 3;
+            this.tbxSearchLH.TextChanged += new System.EventHandler(this.tbxSearchLH_TextChanged);
             // 
             // tbxTenLH
             // 

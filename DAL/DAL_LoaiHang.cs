@@ -51,5 +51,43 @@ namespace DAL
 
             return loaiHang;
         }
+        public bool InsertLH(string lHName)
+        {
+            string query = string.Format("INSERT LoaiHang ( lHName)" +
+                "VALUES  ( N'{0}')", lHName);
+            int result = Dataprovider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+        public bool UpdateLH(int lHId, string lHName)
+        {
+            string query = string.Format("UPDATE LoaiHang " +
+                "SET lHName = N'{1}' WHERE lHId = {0}", lHId, lHName);
+            int result = Dataprovider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool DeleteLH(int lHId)
+        {
+            string query = string.Format("delete from LoaiHang  WHERE lHId = {0}", lHId);
+            int result = Dataprovider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public List<DTO_LoaiHang> SearchLHByName(string name)
+        {
+
+            List<DTO_LoaiHang> list = new List<DTO_LoaiHang>();
+
+            string query = string.Format("SELECT * FROM LoaiHang WHERE dbo.fuConvertToUnsign1(lHName) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", name);
+
+            DataTable data = Dataprovider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                DTO_LoaiHang lh = new DTO_LoaiHang(item);
+                list.Add(lh);
+            }
+
+            return list;
+        }
     }
 }

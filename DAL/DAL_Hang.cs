@@ -51,5 +51,46 @@ namespace DAL
 
             return list;
         }
+        public bool InsertHang(int lHId, string hName, int hCount, string hValues, int hPrice)
+        {
+            string query = string.Format("INSERT Hang (lHId, hName, hCount, hValues, hPrice, hDate)" +
+                "VALUES  ( {0}, N'{1}', {2}, N'{3}', {4}, getdate())", lHId, hName, hCount, hValues, hPrice);
+            int result = Dataprovider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+        public bool UpdateHang(int hId, int lHId, string hName, int hCount, string hValues, int hPrice)
+        {
+            string query = string.Format("update Hang " +
+                "set lHId = {0}, hName =  N'{1}', hCount = {2}, hValues = N'{3}', hPrice = {4} " +
+                "where hId = {5} ", lHId, hName, hCount, hValues, hPrice, hId);
+            int result = Dataprovider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+        public bool DeleteHang(int hId)
+        {
+            string query = string.Format("delete from Hang " +
+                "WHERE hId = {0}", hId);
+            int result = Dataprovider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public List<DTO_Hang> SearchHangByName(string name)
+        {
+
+            List<DTO_Hang> list = new List<DTO_Hang>();
+
+            string query = string.Format("SELECT * FROM Hang WHERE dbo.fuConvertToUnsign1(hName) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", name);
+
+            DataTable data = Dataprovider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                DTO_Hang hang = new DTO_Hang(item);
+                list.Add(hang);
+            }
+
+            return list;
+        }
     }
 }

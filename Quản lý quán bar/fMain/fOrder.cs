@@ -1,6 +1,7 @@
 ﻿using DAL;
 using DTO;
 using FontAwesome.Sharp;
+using Quản_lý_quán_bar.fAdminCF;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,7 @@ namespace Quản_lý_quán_bar.fMain
             InitializeComponent();
             LoadTable();
             LoadCategory();
+            
         }
         #region Method
         void LoadTable()
@@ -128,7 +130,6 @@ namespace Quản_lý_quán_bar.fMain
             }
 
             ShowHoaDon(table.TableID);
-
             LoadTable();
         }
 
@@ -150,11 +151,17 @@ namespace Quản_lý_quán_bar.fMain
             {
                 if (MessageBox.Show(String.Format("Bạn có chắc thanh toán hóa đơn cho bàn {0}\nTổng tiền - (Tổng tiền / 100) x Giảm giá\n=> {1} - ({1} / 100) x {2} = {3}", table.TableName, totalPrice, discount, finalTotalPrice), "Thông báo ", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    DAL_HoaDon.Instance.CheckOut(hDId, discount);
+                    DAL_HoaDon.Instance.CheckOut(hDId, discount, (float)finalTotalPrice);
                     ShowHoaDon(table.TableID);
                     LoadTable();
                 }
             }
+        }
+        public void f_UpdateTU(object sender, EventArgs e)
+        {
+            LoadDrinkListByCategoryID((cbCategory.SelectedItem as DTO_LoaiThucUong).LTUId);
+            if (lsvBill.Tag != null)
+                ShowHoaDon((lsvBill.Tag as DTO_Table).TableID);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DAL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -86,6 +87,45 @@ namespace Quản_lý_quán_bar.fAdminCF.fQLTU
         {
             add { updateLTU += value; }
             remove { updateLTU -= value; }
+        }
+
+        private void ibtnXoaLTU_Click(object sender, EventArgs e)
+        {
+            int lTUId = Convert.ToInt32(tbxMaLTU.Text);
+            string lTUName = tbxTenLTU.Text;
+            DialogResult result = 
+                MessageBox.Show("Bạn có chắc xóa loại thức uống "+ lTUName +"? \n Nó sẽ xóa luôn những thức uống thuộc danh mục này!", "Thông báo", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                if (DAL_LoaiThucUong.Instance.DeleteLDrink(lTUId))
+                {
+                    MessageBox.Show("Xóa món thành công");
+                    LoadListLTU();
+                    if (deleteLTU != null)
+                        deleteLTU(this, new EventArgs());
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi xóa thức uống");
+                }
+            }    
+        }
+        private event EventHandler deleteLTU;
+        public event EventHandler DeleteLTU
+        {
+            add { deleteLTU += value; }
+            remove { deleteLTU -= value; }
+        }
+
+        List<DTO_LoaiThucUong> SearchFoodByName(string name)
+        {
+            List<DTO_LoaiThucUong> listFood = DAL_LoaiThucUong.Instance.SearchFoodByName(name);
+
+            return listFood;
+        }
+        private void tbxSearchLTU_TextChanged(object sender, EventArgs e)
+        {
+            LoaiThucUongList.DataSource = SearchFoodByName(tbxSearchLTU.Text);
         }
     }
 }

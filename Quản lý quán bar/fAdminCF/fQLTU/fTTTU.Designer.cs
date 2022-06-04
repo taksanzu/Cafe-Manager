@@ -97,6 +97,7 @@
             this.ibtnXoaTU.Size = new System.Drawing.Size(75, 47);
             this.ibtnXoaTU.TabIndex = 0;
             this.ibtnXoaTU.UseVisualStyleBackColor = true;
+            this.ibtnXoaTU.Click += new System.EventHandler(this.ibtnXoaTU_Click);
             // 
             // ibtnSuaTU
             // 
@@ -230,6 +231,7 @@
             this.tbxSearchTU.Name = "tbxSearchTU";
             this.tbxSearchTU.Size = new System.Drawing.Size(250, 30);
             this.tbxSearchTU.TabIndex = 3;
+            this.tbxSearchTU.TextChanged += new System.EventHandler(this.tbxSearchTU_TextChanged);
             // 
             // cbbxLoaiTU
             // 

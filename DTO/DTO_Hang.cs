@@ -9,7 +9,7 @@ namespace DTO
 {
     public class DTO_Hang
     {
-        public DTO_Hang(int hId, int lHId, string hName, int hCount, string hValues, int hPrice)
+        public DTO_Hang(int hId, int lHId, string hName, int hCount, string hValues, int hPrice, DateTime hDate)
         {
             this.HId = hId;
             this.LHId = lHId;
@@ -17,6 +17,7 @@ namespace DTO
             this.HCount = hCount;
             this.HValues = hValues;
             this.HPrice = hPrice;
+            this.HDate = hDate;
         }
         public DTO_Hang(DataRow row)
         {
@@ -26,6 +27,7 @@ namespace DTO
             this.HCount = (int)row["hCount"];
             this.HValues = row["hValues"].ToString();
             this.HPrice = (int)row["hPrice"];
+            this.HDate = (DateTime?)row["hDate"];
         }
         private int hId;
         public int HId
@@ -63,5 +65,12 @@ namespace DTO
             get { return hPrice; }
             set { hPrice = value; }
         }
+        private DateTime? hDate;
+        public DateTime? HDate
+        {
+            get { return hDate; }
+            set { hDate = value; }
+        }
+
     }
 }

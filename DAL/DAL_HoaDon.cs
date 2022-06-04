@@ -31,14 +31,18 @@ namespace DAL
 
             return -1;
         }
-        public void CheckOut(int hDId, int discount)
+        public void CheckOut(int hDId, int discount, float totalPrice)
         {
-            string query = "UPDATE HoaDon SET statusBill = 1, discount = "+ discount +" where hDId = " + hDId;
+            string query = "UPDATE HoaDon SET NgayRa = getdate(), statusBill = 1, discount = "+ discount +", totalPrice = "+ totalPrice +" where hDId = " + hDId;
             Dataprovider.Instance.ExecuteNonQuery(query);
         }
         public void InsertBill(int hDId)
         {
             Dataprovider.Instance.ExecuteNonQuery("exec USP_InsertBill @idTable", new object[] { hDId });
+        }
+        public DataTable GetBillListByDate(DateTime checkIn, DateTime checkOut)
+        {
+            return Dataprovider.Instance.ExecuteQuery("exec USP_GetListBillByDate @checkIn , @checkout", new object[] { checkIn, checkOut });
         }
         public int GetMaxIDBill()
         {

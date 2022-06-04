@@ -35,19 +35,16 @@
             this.ibtnThemTK = new FontAwesome.Sharp.IconButton();
             this.dgvwTK = new System.Windows.Forms.DataGridView();
             this.pnlEmployee = new System.Windows.Forms.Panel();
-            this.tbxSearchAccount = new System.Windows.Forms.TextBox();
+            this.btnRSPass = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.tbxTenHT = new System.Windows.Forms.TextBox();
-            this.tbxPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tbxUserName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.pnlEmployeeMN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwTK)).BeginInit();
             this.pnlEmployee.SuspendLayout();
@@ -81,6 +78,7 @@
             this.ibtnXemTK.Size = new System.Drawing.Size(75, 47);
             this.ibtnXemTK.TabIndex = 0;
             this.ibtnXemTK.UseVisualStyleBackColor = true;
+            this.ibtnXemTK.Click += new System.EventHandler(this.ibtnXemTK_Click);
             // 
             // ibtnXoaTK
             // 
@@ -96,6 +94,7 @@
             this.ibtnXoaTK.Size = new System.Drawing.Size(75, 47);
             this.ibtnXoaTK.TabIndex = 0;
             this.ibtnXoaTK.UseVisualStyleBackColor = true;
+            this.ibtnXoaTK.Click += new System.EventHandler(this.ibtnXoaTK_Click);
             // 
             // ibtnSuaTK
             // 
@@ -111,6 +110,7 @@
             this.ibtnSuaTK.Size = new System.Drawing.Size(75, 47);
             this.ibtnSuaTK.TabIndex = 0;
             this.ibtnSuaTK.UseVisualStyleBackColor = true;
+            this.ibtnSuaTK.Click += new System.EventHandler(this.ibtnSuaTK_Click);
             // 
             // ibtnThemTK
             // 
@@ -126,6 +126,7 @@
             this.ibtnThemTK.Size = new System.Drawing.Size(75, 47);
             this.ibtnThemTK.TabIndex = 0;
             this.ibtnThemTK.UseVisualStyleBackColor = true;
+            this.ibtnThemTK.Click += new System.EventHandler(this.ibtnThemTK_Click);
             // 
             // dgvwTK
             // 
@@ -137,22 +138,20 @@
             this.dgvwTK.RowTemplate.Height = 24;
             this.dgvwTK.Size = new System.Drawing.Size(762, 708);
             this.dgvwTK.TabIndex = 10;
+            this.dgvwTK.SelectionChanged += new System.EventHandler(this.dgvwTK_SelectionChanged);
             // 
             // pnlEmployee
             // 
             this.pnlEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.pnlEmployee.Controls.Add(this.btnRSPass);
             this.pnlEmployee.Controls.Add(this.numericUpDown1);
-            this.pnlEmployee.Controls.Add(this.tbxSearchAccount);
             this.pnlEmployee.Controls.Add(this.tbxTenHT);
-            this.pnlEmployee.Controls.Add(this.tbxPassword);
             this.pnlEmployee.Controls.Add(this.label5);
             this.pnlEmployee.Controls.Add(this.label8);
             this.pnlEmployee.Controls.Add(this.label7);
             this.pnlEmployee.Controls.Add(this.label6);
             this.pnlEmployee.Controls.Add(this.label3);
-            this.pnlEmployee.Controls.Add(this.label2);
             this.pnlEmployee.Controls.Add(this.tbxUserName);
-            this.pnlEmployee.Controls.Add(this.label4);
             this.pnlEmployee.Controls.Add(this.label1);
             this.pnlEmployee.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlEmployee.Location = new System.Drawing.Point(0, 0);
@@ -160,32 +159,40 @@
             this.pnlEmployee.Size = new System.Drawing.Size(340, 708);
             this.pnlEmployee.TabIndex = 9;
             // 
-            // tbxSearchAccount
+            // btnRSPass
             // 
-            this.tbxSearchAccount.Location = new System.Drawing.Point(23, 39);
-            this.tbxSearchAccount.Name = "tbxSearchAccount";
-            this.tbxSearchAccount.Size = new System.Drawing.Size(250, 30);
-            this.tbxSearchAccount.TabIndex = 3;
+            this.btnRSPass.Location = new System.Drawing.Point(23, 417);
+            this.btnRSPass.Name = "btnRSPass";
+            this.btnRSPass.Size = new System.Drawing.Size(125, 65);
+            this.btnRSPass.TabIndex = 12;
+            this.btnRSPass.Text = "Đặt lại mật khẩu";
+            this.btnRSPass.UseVisualStyleBackColor = true;
+            this.btnRSPass.Click += new System.EventHandler(this.btnRSPass_Click);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(24, 381);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(250, 30);
+            this.numericUpDown1.TabIndex = 12;
             // 
             // tbxTenHT
             // 
-            this.tbxTenHT.Location = new System.Drawing.Point(23, 372);
+            this.tbxTenHT.Location = new System.Drawing.Point(23, 316);
             this.tbxTenHT.Name = "tbxTenHT";
             this.tbxTenHT.Size = new System.Drawing.Size(250, 30);
             this.tbxTenHT.TabIndex = 1;
-            // 
-            // tbxPassword
-            // 
-            this.tbxPassword.Location = new System.Drawing.Point(24, 307);
-            this.tbxPassword.Name = "tbxPassword";
-            this.tbxPassword.Size = new System.Drawing.Size(250, 30);
-            this.tbxPassword.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(19, 345);
+            this.label5.Location = new System.Drawing.Point(19, 289);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 24);
             this.label5.TabIndex = 0;
@@ -225,21 +232,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(20, 410);
+            this.label3.Location = new System.Drawing.Point(20, 354);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 24);
             this.label3.TabIndex = 0;
             this.label3.Text = "Loại:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(20, 280);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Password:";
             // 
             // tbxUserName
             // 
@@ -247,16 +244,6 @@
             this.tbxUserName.Name = "tbxUserName";
             this.tbxUserName.Size = new System.Drawing.Size(250, 30);
             this.tbxUserName.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(20, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 24);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Search:";
             // 
             // label1
             // 
@@ -267,18 +254,6 @@
             this.label1.Size = new System.Drawing.Size(120, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "User Name:";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(24, 437);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(250, 30);
-            this.numericUpDown1.TabIndex = 12;
             // 
             // fTTK
             // 
@@ -311,12 +286,8 @@
         private FontAwesome.Sharp.IconButton ibtnThemTK;
         private System.Windows.Forms.DataGridView dgvwTK;
         private System.Windows.Forms.Panel pnlEmployee;
-        private System.Windows.Forms.TextBox tbxSearchAccount;
-        private System.Windows.Forms.TextBox tbxPassword;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxUserName;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbxTenHT;
         private System.Windows.Forms.Label label5;
@@ -324,5 +295,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button btnRSPass;
     }
 }

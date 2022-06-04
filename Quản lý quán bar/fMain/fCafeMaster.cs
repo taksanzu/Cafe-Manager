@@ -169,17 +169,34 @@ namespace Quản_lý_quán_bar
 
         private void ibtnAdmin_Click(object sender, EventArgs e)
         {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
             ActiveBtn(sender, RBGColor.color1);
-            fAdmin f = new fAdmin();
+            fAdmin f = new fAdmin(loginAccount);
             this.Hide();
             f.ShowDialog();
             this.Show();
+           
         }
 
         private void ibtnOrder_Click(object sender, EventArgs e)
         {
             OpenChildForm(new fOrder());
             ActiveBtn(sender, RBGColor.color1);
+        }
+
+        private void ibtnXemBaoCao_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new fReport());
+            ActiveBtn(sender, RBGColor.color1);
+        }
+
+        private void ibtnChangePassword_Click(object sender, EventArgs e)
+        {
+            fChangePassword f = new fChangePassword(LoginAccount);
+            f.ShowDialog();
         }
     }
 }

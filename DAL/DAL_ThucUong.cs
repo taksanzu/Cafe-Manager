@@ -66,5 +66,30 @@ namespace DAL
             int result = Dataprovider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+
+        public bool DeleteDrink(int tUId)
+        {
+            string query = string.Format("delete from ThucUong " +
+                "WHERE tUId = {0}", tUId);
+            int result = Dataprovider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public List<DTO_ThucUong> SearchDrinkByName(string name)
+        {
+
+            List<DTO_ThucUong> list = new List<DTO_ThucUong>();
+
+            string query = string.Format("SELECT * FROM ThucUong WHERE dbo.fuConvertToUnsign1(tUName) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", name);
+
+            DataTable data = Dataprovider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                DTO_ThucUong drink = new DTO_ThucUong(item);
+                list.Add(drink);
+            }
+
+            return list;
+        }
     }
 }

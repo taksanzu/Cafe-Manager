@@ -1,5 +1,7 @@
-﻿using Quản_lý_quán_bar.fAdminCF.fQLNK;
+﻿using DTO;
+using Quản_lý_quán_bar.fAdminCF.fQLNK;
 using Quản_lý_quán_bar.fAdminCF.fQLTU;
+using Quản_lý_quán_bar.fMain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +18,16 @@ namespace Quản_lý_quán_bar.fAdminCF
     public partial class fAdmin : Form
     {
         private Form currentChildForm;
-        public fAdmin()
+        public DTO_TaiKhoan loginAccount;
+        public DTO_TaiKhoan LoginAccount
+        {
+            get { return loginAccount; }
+            set { loginAccount = value; }
+        }
+        public fAdmin(DTO_TaiKhoan acc)
         {
             InitializeComponent();
+            this.LoginAccount = acc;
         }
         private void OpenChildForm(Form childForm)
         {
@@ -45,12 +54,16 @@ namespace Quản_lý_quán_bar.fAdminCF
 
         private void mtsTTTK_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fTTK());
+            OpenChildForm(new fTTK(loginAccount));
         }
 
         private void mtsTTTU_Click(object sender, EventArgs e)
         {
+            fTTTU f = new fTTTU();
+            fOrder f2 = new fOrder();
+            f.UpdateTU += f2.f_UpdateTU;
             OpenChildForm(new fTTTU());
+            
         }
 
         private void mtsTTLTU_Click(object sender, EventArgs e)
@@ -84,6 +97,11 @@ namespace Quản_lý_quán_bar.fAdminCF
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void msQLB_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new fBan());
         }
     }
 }

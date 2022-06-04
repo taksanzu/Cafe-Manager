@@ -30,5 +30,29 @@ namespace DAL
             }    
             return tablelist;
         }
+        public void InsertTable(int N)
+        {
+            Dataprovider.Instance.ExecuteNonQuery("exec USP_InsertTable @n", new object[] { N });
+        }
+        public void DeleteTable(int N)
+        {
+            Dataprovider.Instance.ExecuteNonQuery("exec USP_DeleteTable @n", new object[] { N });
+        }
+        public List<DTO_Table> GetListTable()
+        {
+            List<DTO_Table> list = new List<DTO_Table>();
+
+            string query = "select * from Ban";
+
+            DataTable data = Dataprovider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                DTO_Table ban = new DTO_Table(item);
+                list.Add(ban);
+            }
+
+            return list;
+        }
     }
 }
