@@ -136,6 +136,12 @@
     <Compile Include="fAdminCF\fQLTU\fTTTU.Designer.cs">
       <DependentUpon>fTTTU.cs</DependentUpon>
     </Compile>
+    <Compile Include="fMain\fBillReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMain\fBillReport.Designer.cs">
+      <DependentUpon>fBillReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="fMain\fCafeMaster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     <EmbeddedResource Include="fAdminCF\fQLTU\fTTTU.resx">
       <DependentUpon>fTTTU.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fMain\fBillReport.resx">
+      <DependentUpon>fBillReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fMain\fCafeMaster.resx">
       <DependentUpon>fCafeMaster.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +235,7 @@
     <EmbeddedResource Include="fMain\fReportCF\fVenue.resx">
       <DependentUpon>fVenue.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fMain\Report1.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -259,6 +269,10 @@
       <DependentUpon>dbCafeManagerDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DTO.Menu.datasource" />
+    <None Include="Properties\DataSources\Quản_lý_quán_bar.fMain.fChangePassword.datasource" />
+    <None Include="Properties\DataSources\Quản_lý_quán_bar.fMain.fOrder.datasource" />
+    <None Include="Properties\DataSources\Quản_lý_quán_bar.fMain.fReport.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
